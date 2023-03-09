@@ -64,8 +64,8 @@
     <div class="container-fluid" data-aos="fade-up">
       <div class="row justify-content-center">
         <div class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <h1>Get Radical Therapy for your Development Team</h1>
-          <h1>Get Transparent, Communicate better and build Better Products</h1>
+          <h1>Radical Therapy for your Development Team</h1>
+          <h1>Get Transparent, Communicate and <em>Build Better Products</em></h1>
           <h2 data-aos="fade-up" data-aos-delay="400" class="aos-init aos-animate">Keep teams positive and grow the diveristy of the team and oppinions by learning radical.</h2>
           <div><a href="#about" class="btn-get-started scrollto">Get Started</a></div>
         </div>
@@ -126,7 +126,52 @@
             <h2>Payment</h2>
             <p>Please make a payment of $50 for each 30-minute session:</p>
             <!-- PayPal payment link -->
-            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YOUR_BUTTON_ID" class="btn btn-primary">Pay with PayPal</a>
+            <div id="smart-button-container">
+              <div style="text-align: center;">
+                <div id="paypal-button-container"></div>
+              </div>
+            </div>
+          <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+          <script>
+            function initPayPalButton() {
+              paypal.Buttons({
+                style: {
+                  shape: 'rect',
+                  color: 'gold',
+                  layout: 'vertical',
+                  label: 'paypal',
+                  
+                },
+        
+                createOrder: function(data, actions) {
+                  return actions.order.create({
+                    purchase_units: [{"description":"Discovery and Rapid Learning Session","amount":{"currency_code":"USD","value":1}}]
+                  });
+                },
+        
+                onApprove: function(data, actions) {
+                  return actions.order.capture().then(function(orderData) {
+                    
+                    // Full available details
+                    console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+        
+                    // Show a success message within this page, e.g.
+                    const element = document.getElementById('paypal-button-container');
+                    element.innerHTML = '';
+                    element.innerHTML = '<h3>Thank you for your payment!</h3>';
+        
+                    // Or go to another URL:  actions.redirect('thank_you.html');
+                    
+                  });
+                },
+        
+                onError: function(err) {
+                  console.log(err);
+                }
+              }).render('#paypal-button-container');
+            }
+            initPayPalButton();
+          </script>
           </div>
         </div>
       </div>
