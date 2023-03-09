@@ -436,44 +436,6 @@
     <!-- Stand Up Section -->
     <section id="stanup" class="features">
       
-      <script>
-        // Define the displayJoke function
-        function displayJoke() {
-          const jsonFile = 'https://www.radicaltherapy.dev/jokes.json';
-          const jokes = [];
-
-          // Load the JSON file using an XMLHttpRequest
-          const xhr = new XMLHttpRequest();
-          xhr.open('GET', jsonFile);
-          xhr.onload = function() {
-            if (xhr.status === 200) {
-              // Parse the JSON data and add the jokes to the array
-              const data = JSON.parse(xhr.responseText);
-              for (let i = 0; i < data.length; i++) {
-                jokes.push(data[i].joke);
-              }
-
-              // Select a random joke and display it on the page
-              const joke = jokes[Math.floor(Math.random() * jokes.length)];
-              const jokeElement = document.getElementById('joke');
-              jokeElement.innerHTML = joke;
-            } else {
-              console.error('Failed to load jokes');
-            }
-          };
-          xhr.send();
-        }
-
-        // Schedule the displayJoke function to run every day at 12:00 PM using the setInterval method
-        setInterval(displayJoke, 86400000); // 86400000 milliseconds = 1 day
-
-      </script>
-
-      <script>
-          window.onload = function() {
-            displayJoke();
-          };
-      </script>
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">

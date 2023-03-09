@@ -40,22 +40,11 @@ const jokeAPIs = [
       const joke = await fetchJokes(apiURL);
       if (joke) {
         jokes.push(joke);
+        const jokeElement = document.getElementById('joke');
+        jokeElement.innerHTML = joke;
       }
     }
-  
-    try {
-      const fileData = JSON.stringify(jokes);
-      const blob = new Blob([fileData], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      document.body.appendChild(link);
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
-      console.log(`Successfully saved ${jokes.length} jokes to jokes.json`);
-    } catch (error) {
-      console.error('Failed to save jokes to jokes.json:', error);
-    }
+
   }
   
   // Call the fetchAndSaveJokes function to fetch jokes from all APIs and store them in a JSON file
