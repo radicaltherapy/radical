@@ -2,7 +2,6 @@
 const jokeAPIs = [
     'https://icanhazdadjoke.com/',
     'https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,racist,sexist&type=single',
-    'https://geek-jokes.sameerkumar.website/api',
   ];
   
   // Function to fetch jokes from a single API
@@ -35,11 +34,10 @@ const jokeAPIs = [
   // Function to fetch jokes from multiple APIs and store them in a JSON file
   async function fetchAndSaveJokes() {
     const jokes = [];
-  
+    x=1
+    var jokeId = 1
     for (const apiURL of jokeAPIs) {
       const joke = await fetchJokes(apiURL);
-      x=1
-      var jokeId = 1
       if (typeof joke !== "undefined" && joke !== "undefined") {
         console.log(joke);
         jokeId = "joke" + x
