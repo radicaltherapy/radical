@@ -39,9 +39,11 @@ const jokeAPIs = [
     for (const apiURL of jokeAPIs) {
       const joke = await fetchJokes(apiURL);
       x=1
+      var jokeId = 1
       if (typeof joke !== "undefined" && joke !== "undefined") {
         console.log(joke);
-        const jokeElement = document.getElementById('joke' + x);
+        jokeId = "joke" + x
+        const jokeElement = document.getElementById(jokeId);
         jokeElement.textContent = joke;
         x++
         jokes.push(joke);
