@@ -41,9 +41,10 @@ const jokeAPIs = [
       x=1
       if (typeof joke !== "undefined" && joke !== "undefined") {
         console.log(joke);
-        jokes.push(joke);
         const jokeElement = document.getElementById('joke' + x);
         jokeElement.innerHTML = joke;
+        x++
+        jokes.push(joke);
       }
     }
 
