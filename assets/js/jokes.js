@@ -49,7 +49,6 @@ const jokeAPIs = [
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = 'https://www.radicaltherapy.dev/jokes.json';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
