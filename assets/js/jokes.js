@@ -1,11 +1,8 @@
 // List of joke APIs to fetch jokes from
 const jokeAPIs = [
-    'https://official-joke-api.appspot.com/random_joke',
     'https://icanhazdadjoke.com/',
-    'https://sv443.net/jokeapi/v2/joke/Any',
-    'https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Dark,Pun,Spooky?blacklistFlags=nsfw,racist,sexist&type=single',
+    'https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,racist,sexist&type=single',
     'https://geek-jokes.sameerkumar.website/api',
-    'https://api.chucknorris.io/jokes/random',
   ];
   
   // Function to fetch jokes from a single API
