@@ -49,8 +49,7 @@
           <li><a class="nav-link scrollto active" href="#hero">Get Radical</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
           <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -67,6 +66,7 @@
         <div class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
           <h1>Get Radical Therapy for your Development Team</h1>
           <h2>Get Transparent, Communicate better and build Better Products</h2>
+          <p>Keeps teams positive andgrow diveristy in the team and of the oppinions by being includsive in every aspect of your growth.</p>
           <div><a href="#about" class="btn-get-started scrollto">Get Started</a></div>
         </div>
         <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
@@ -95,6 +95,9 @@
                 <li>Builds trust and fosters a culture of honesty and accountability</li>
                 <li>Improves decision-making by providing more information and insights</li>
                 <li>Facilitates continuous improvement by identifying areas for growth and development</li>
+                </ul>
+                <h2>Positivity for Teams</h2>
+                <ul>
                 <li>Reduces conflicts and misunderstandings by making expectations clear and explicit</li>
                 <li>Increases productivity by eliminating unnecessary bureaucracy and delays</li>
                 <li>Enhances employee engagement and satisfaction by promoting transparency and fairness</li>
@@ -391,6 +394,66 @@
 
       </div>
     </section><!-- End Pricing Section -->
+  
+    <!-- Stand Up Section -->
+    <section id="stanup" class="features">
+      
+      <script>
+        // Define the displayJoke function
+        function displayJoke() {
+          const jsonFile = 'https://www.radicaltherapy.dev/jokes.json';
+          const jokes = [];
+
+          // Load the JSON file using an XMLHttpRequest
+          const xhr = new XMLHttpRequest();
+          xhr.open('GET', jsonFile);
+          xhr.onload = function() {
+            if (xhr.status === 200) {
+              // Parse the JSON data and add the jokes to the array
+              const data = JSON.parse(xhr.responseText);
+              for (let i = 0; i < data.length; i++) {
+                jokes.push(data[i].joke);
+              }
+
+              // Select a random joke and display it on the page
+              const joke = jokes[Math.floor(Math.random() * jokes.length)];
+              const jokeElement = document.getElementById('joke');
+              jokeElement.innerHTML = joke;
+            } else {
+              console.error('Failed to load jokes');
+            }
+          };
+          xhr.send();
+        }
+
+        // Schedule the displayJoke function to run every day at 12:00 PM using the setInterval method
+        setInterval(displayJoke, 86400000); // 86400000 milliseconds = 1 day
+
+      </script>
+
+      <script>
+          window.onload = function() {
+            displayJoke();
+          };
+      </script>
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Standups</h2>
+          <p>
+            The daily standup is an important communication tool, but it should also set the direction and mood for the day.  With dealines looming and bugs to fix, an ice breaker that relaxes every one is a great
+            way to star off.  
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column align-items-lg-center">
+            <div class="icon-box mt-5 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-receipt"></i>
+              <h4>Standup Joke of the Day</h4>
+              <p id="joke"></p>
+            </div>
+    </section>
 
     
   <!-- ======= Footer ======= -->
@@ -480,6 +543,9 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Feth Jokes JS File -->
+  <script src="assets/js/jokes.js"></script>
 
 </body>
 
