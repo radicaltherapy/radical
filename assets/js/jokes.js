@@ -50,7 +50,6 @@ const jokeAPIs = [
       const link = document.createElement('a');
       link.href = url;
       document.body.appendChild(link);
-      link.click();
       document.body.removeChild(link);
       URL.revokeObjectURL(url);
       console.log(`Successfully saved ${jokes.length} jokes to jokes.json`);
