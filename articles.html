@@ -27,12 +27,6 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Techie - v4.10.0
-  * Template URL: https://bootstrapmade.com/techie-free-skin-bootstrap-3/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -40,39 +34,21 @@
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top header-inner-pages">
     <div class="container d-flex align-items-center justify-content-between">
-      <h1 class="logo"><a href="index.html">Techie</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto " href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      <h1 class="logo"><a href="index.html">Radical Therapy Dev</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+  
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active" href="index.html#hero">Get Radical</a></li>
+            <li><a class="nav-link scrollto" href="index.html#about">About</a></li>
+            <li><a class="nav-link scrollto" href="index.html#services">Services</a></li>
+            <li><a class="nav-link scrollto" href="index.html#pricing">Pricing</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a class="getstarted scrollto" href="index.html#about">Get Started</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
 
     </div>
   </header><!-- End Header -->
@@ -84,10 +60,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Inner Page</h2>
+          <h2>Developer Articles</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li>Inner Page</li>
+            <li>Dev Articles</li>
           </ol>
         </div>
 
@@ -95,10 +71,95 @@
     </section><!-- End Breadcrumbs -->
 
     <section class="inner-page">
-      <div class="container">
-        <p>
-          Example inner page template
-        </p>
+      <script>
+        // Define the RSS feed URL
+        const rssFeedUrl = 'https://www.buildly.io/news/feed/';
+
+        // Define the category to filter
+        const category = 'developer';
+
+        // Define the number of items per page
+        const itemsPerPage = 10;
+
+        // Fetch the RSS feed data
+        fetch(rssFeedUrl)
+          .then(response => response.text())
+          .then(xmlString => {
+
+            // Parse the XML data
+            const parser = new DOMParser();
+            const xml = parser.parseFromString(xmlString, 'text/xml');
+
+            console.log(xml);
+
+            // Filter the entries based on the category
+            const entries = Array.from(xml.getElementsByTagName('item'))
+            //  .filter(item => Array.from(item.getElementsByTagName('category'))
+            //    .some(cat => cat.textContent === category));
+
+            // Calculate the number of pages
+            const numPages = Math.ceil(entries.length / itemsPerPage);
+
+            // Get the container element for the paginated list
+            const container = document.getElementById('paginated-list-container');
+
+            // Generate the pagination controls
+            const pagination = document.createElement('nav');
+            pagination.innerHTML = `
+              <ul class="pagination justify-content-center">
+                ${Array.from({ length: numPages }, (_, i) => `
+                  <li class="page-item${i === 0 ? ' active' : ''}">
+                    <a class="page-link" href="#" data-page="${i}">${i + 1}</a>
+                  </li>
+                `).join('')}
+              </ul>
+            `;
+            container.appendChild(pagination);
+
+            // Generate the initial page of entries
+            generateEntriesPage(0);
+
+            // Define a function to generate a page of entries
+            function generateEntriesPage(pageIndex) {
+              // Clear the existing entries
+              container.querySelectorAll('.entry').forEach(entry => entry.remove());
+
+              // Get the entries for the current page
+              const startIndex = pageIndex * itemsPerPage;
+              const endIndex = startIndex + itemsPerPage;
+              const pageEntries = entries.slice(startIndex, endIndex);
+
+              // Generate the HTML elements for the entries
+              const entriesHtml = pageEntries.map(entry => `
+                <div class="card mb-3 entry">
+                  <div class="card-body">
+                    <h5 class="card-title">${entry.getElementsByTagName('title')[0].textContent}</h5>
+                    <p class="card-text">${entry.getElementsByTagName('description')[0].textContent}</p>
+                    <a class="button lg" href="${entry.getElementsByTagName('link')[0].textContent}">READ</a> 
+                  </div>
+                </div>
+              `).join('');
+
+              // Add the entries to the container
+              const entriesContainer = document.createElement('div');
+              entriesContainer.innerHTML = entriesHtml;
+              container.appendChild(entriesContainer);
+            }
+
+            // Attach event listeners to the pagination links
+            pagination.querySelectorAll('a').forEach(link => {
+              link.addEventListener('click', event => {
+                event.preventDefault();
+                pagination.querySelectorAll('.active').forEach(activeLink => activeLink.classList.remove('active'));
+                link.parentNode.classList.add('active');
+                generateEntriesPage(parseInt(link.getAttribute('data-page')));
+              });
+            });
+          });
+
+      </script>
+      <div id="paginated-list-container" class="container">
+        
       </div>
     </section>
 
