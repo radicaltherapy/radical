@@ -622,8 +622,16 @@ section {
   padding: 0;
 }
 
+.about ul li::before {
+  content: '✔';
+  font-size: 20px;
+  color: limegreen;
+  line-height: 1.2;
+  padding-right: 10px;
+}
+
 .about .content ul li {
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 
 .about .content ul i {
@@ -828,6 +836,19 @@ section {
 
 .services .iconbox-teal:hover .icon path {
   fill: #11dbcf;
+}
+
+.services ul {
+  list-style: none;
+  padding: 0;
+}
+
+.services ul li::before {
+  content: '✔';
+  font-size: 20px;
+  color: rgb(47, 123, 224);
+  line-height: 1.8;
+  padding-right: 10px;
 }
 
 /*--------------------------------------------------------------
