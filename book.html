@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Inner Page - Techie Bootstrap Template</title>
+  <title>Radical Therapy for Team</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -61,10 +61,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Developer Articles</h2>
+          <h2>Book Preview</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li>Dev Articles</li>
+            <li>Radical Therapy for Team</li>
           </ol>
         </div>
 
@@ -72,93 +72,22 @@
     </section><!-- End Breadcrumbs -->
 
     <section class="inner-page">
-      <script>
-        // Define the RSS feed URL
-        const rssFeedUrl = 'https://www.buildly.io/news/feed/';
 
-        // Define the category to filter
-        const category = 'developer';
-
-        // Define the number of items per page
-        const itemsPerPage = 10;
-
-        // Fetch the RSS feed data
-        fetch(rssFeedUrl)
-          .then(response => response.text())
-          .then(xmlString => {
-
-            // Parse the XML data
-            const parser = new DOMParser();
-            const xml = parser.parseFromString(xmlString, 'text/xml');
-
-            console.log(xml);
-
-            // Filter the entries based on the category
-            const entries = Array.from(xml.getElementsByTagName('item'))
-            //  .filter(item => Array.from(item.getElementsByTagName('category'))
-            //    .some(cat => cat.textContent === category));
-
-            // Calculate the number of pages
-            const numPages = Math.ceil(entries.length / itemsPerPage);
-
-            // Get the container element for the paginated list
-            const container = document.getElementById('paginated-list-container');
-
-            // Generate the pagination controls
-            const pagination = document.createElement('nav');
-            pagination.innerHTML = `
-              <ul class="pagination justify-content-center">
-                ${Array.from({ length: numPages }, (_, i) => `
-                  <li class="page-item${i === 0 ? ' active' : ''}">
-                    <a class="page-link" href="#" data-page="${i}">${i + 1}</a>
-                  </li>
-                `).join('')}
-              </ul>
-            `;
-            container.appendChild(pagination);
-
-            // Generate the initial page of entries
-            generateEntriesPage(0);
-
-            // Define a function to generate a page of entries
-            function generateEntriesPage(pageIndex) {
-              // Clear the existing entries
-              container.querySelectorAll('.entry').forEach(entry => entry.remove());
-
-              // Get the entries for the current page
-              const startIndex = pageIndex * itemsPerPage;
-              const endIndex = startIndex + itemsPerPage;
-              const pageEntries = entries.slice(startIndex, endIndex);
-
-              // Generate the HTML elements for the entries
-              const entriesHtml = pageEntries.map(entry => `
-                <div class="card mb-3 entry">
-                  <div class="card-body">
-                    <h5 class="card-title">${entry.getElementsByTagName('title')[0].textContent}</h5>
-                    <p class="card-text">${entry.getElementsByTagName('description')[0].textContent}</p>
-                    <a class="button lg" href="${entry.getElementsByTagName('link')[0].textContent}">READ</a> 
-                  </div>
-                </div>
-              `).join('');
-
-              // Add the entries to the container
-              const entriesContainer = document.createElement('div');
-              entriesContainer.innerHTML = entriesHtml;
-              container.appendChild(entriesContainer);
-            }
-
-            // Attach event listeners to the pagination links
-            pagination.querySelectorAll('a').forEach(link => {
-              link.addEventListener('click', event => {
-                event.preventDefault();
-                pagination.querySelectorAll('.active').forEach(activeLink => activeLink.classList.remove('active'));
-                link.parentNode.classList.add('active');
-                generateEntriesPage(parseInt(link.getAttribute('data-page')));
-              });
-            });
-          });
-
-      </script>
+    <div class="header bg-light text-center py-5">
+        <h1>Welcome to "Radical Transparency for Teams"</h1>
+        <img src="assets/img/cover.png" alt="Book Cover" class="img-fluid max-width: 100%">
+        <a href="assets/img/Preview Chapter of Radical Therapy Teams.pdff" class="download-link mt-3 btn btn-primary btn-lg">Download Preview Chapter (PDF)</a>
+    </div>
+    <div class="key-points text-center mt-4">
+        <h2>Key Points</h2>
+        <p class="quote h4">"Transparency is not just a buzzword, it's a powerful tool for building successful teams."</p>
+        <p class="quote h4">"Discover the secrets of fostering open communication, trust, and innovation."</p>
+        <p class="quote h4">"Learn from the best practices of Ray Dalio's 'Radical Transparency' and Kim Scott's 'Radical Candor'."</p>
+    </div>
+    <div class="summary text-center mt-4">
+        <h2>Book Summary</h2>
+        <p>Explore the revolutionary concept of Radical Transparency in team dynamics. Uncover how this approach, inspired by Ray Dalio's work on open communication and Kim Scott's principles of radical candor, can transform your team's collaboration, productivity, and innovation. Dive into practical strategies, real-world case studies, and tools for fostering transparency in your organization.</p>
+    </div>
       <div id="paginated-list-container" class="container">
         
       </div>
