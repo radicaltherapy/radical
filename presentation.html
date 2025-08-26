@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Buildly · Radical Therapy in the AI Age</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            buildly: { blue: '#0658A1', orange: '#F9943B', ink: '#0F172A' }
+          },
+          boxShadow: { glow: '0 0 0 3px rgba(249,148,59,0.35)' }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    html, body { height: 100%; }
+    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+    .slide { display: none; height: 100vh; width: 100vw; padding: 6rem 4rem 4rem; }
+    .slide.active { display: block; }
+    .kicker { letter-spacing: .12em; text-transform: uppercase; }
+    .img-card { border-radius: 1rem; box-shadow: 0 8px 30px rgba(0,0,0,.25); border: 1px solid rgba(255,255,255,.08); }
+    @media print {
+      #controls, #progress { display: none !important; }
+      .slide { display: block; height: auto; page-break-after: always; padding: 2.5rem 2rem; }
+      .slide * { break-inside: avoid; }
+      body { background: white !important; }
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 selection:bg-buildly-orange/40">
+  <!-- Controls / Header -->
+  <header id="controls" class="fixed top-0 inset-x-0 z-50 backdrop-blur-sm bg-slate-950/60 border-b border-white/5">
+    <div class="mx-auto max-w-7xl px-4 py-3 flex items-center gap-3">
+      <div class="flex items-center gap-2">
+        <div class="h-8 w-8 rounded-xl bg-gradient-to-br from-buildly-blue to-buildly-orange"></div>
+        <div class="text-sm md:text-base font-semibold">Buildly · Radical Therapy in the AI Age</div>
+      </div>
+      <div class="ml-auto flex items-center gap-2">
+        <button id="prevBtn" class="px-3 py-2 text-sm rounded-xl bg-white/5 hover:bg-white/10 border border-white/10">◀ Prev</button>
+        <button id="nextBtn" class="px-3 py-2 text-sm rounded-xl bg-buildly-orange/90 hover:bg-buildly-orange text-slate-950 font-semibold shadow-glow">Next ▶</button>
+        <div id="counter" class="hidden md:block text-xs opacity-80 px-3">1 / 1</div>
+        <div class="w-px h-6 bg-white/10 mx-1"></div>
+        <button id="printBtn" class="px-3 py-2 text-sm rounded-xl bg-white/5 hover:bg-white/10 border border-white/10">Download PDF</button>
+        <button id="pptBtn" class="px-3 py-2 text-sm rounded-xl bg-white/5 hover:bg-white/10 border border-white/10">Export PowerPoint</button>
+        <button id="helpBtn" title="Shortcuts" class="px-3 py-2 text-sm rounded-xl bg-white/0 hover:bg-white/10">?</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Slides -->
+  <main id="deck" class="">
+    <!-- 1 · Title -->
+    <section class="slide active" data-title="Radical Therapy in the AI Age">
+      <div class="absolute inset-0 -z-10 bg-[radial-gradient(90rem_60rem_at_20%_-10%,rgba(6,88,161,0.35),transparent),radial-gradient(90rem_50rem_at_90%_10%,rgba(249,148,59,0.25),transparent)]"></div>
+      <div class="max-w-6xl mx-auto">
+        <div class="kicker text-buildly-orange">Buildly Labs</div>
+        <h1 class="mt-3 text-5xl md:text-6xl font-extrabold leading-tight">
+          Radical Transparency <span class="text-buildly-orange">×</span> AI-Driven Development
+        </h1>
+        <p class="mt-6 text-lg md:text-xl text-slate-200 max-w-3xl">
+          Evolving Agile and requirements for the AI era: move faster <em>with</em> oversight, inclusion, and human-in-the-loop governance.
+        </p>
+        <ul class="mt-8 text-slate-300 grid gap-2">
+          <li>Gregory Lind — Founder, Buildly · Author, <em>Radical Therapy for Software Development Teams</em></li>
+          <li><span class="text-buildly-orange">labs.buildly.io</span> · buildly.io · radicaltherapy.dev</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 2 · From the book -->
+    <section class="slide" data-title="From the book">
+      <h1 class="text-4xl font-extrabold">From the book</h1>
+      <div class="mt-6 grid md:grid-cols-2 gap-8 items-center">
+        <img src="/assets/img/cover.png" alt="Radical Therapy book cover" class="img-card"/>
+        <ul class="text-lg list-disc pl-6">
+          <li>Lessons in remote team management & positive motivation.</li>
+          <li>Transparency as the core operating system for teams.</li>
+          <li>Practical rituals to reduce ceremony and increase outcomes.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3 · Why now -->
+    <section class="slide" data-title="Why now: AI has changed how we build">
+      <h1 class="text-4xl font-extrabold">Why now: AI has changed how we build</h1>
+      <ul class="mt-6 list-disc pl-6 text-lg leading-relaxed">
+        <li>Generation-first workflows: specs ⇄ code ⇄ tests co-evolve in minutes.</li>
+        <li>Developers become editors & architects; PMs become <em>AI conductors</em>.</li>
+        <li>Composable backends (LogicModules) + shared design systems accelerate delivery.</li>
+        <li>New risks: hallucinations, security, IP, bias — require <span class="font-semibold">guardrails</span> & audit trails.</li>
+        <li>Teams need <span class="font-semibold">transparency</span>, not ceremony: visible decisions, traceable changes, inclusive voice.</li>
+      </ul>
+    </section>
+
+    <!-- 4 · Principles -->
+    <section class="slide" data-title="Principles that scale with AI">
+      <h1 class="text-4xl font-extrabold">Principles that scale with AI</h1>
+      <div class="mt-6 grid md:grid-cols-2 gap-8 text-lg">
+        <div>
+          <h2 class="kicker text-buildly-orange">Transparency</h2>
+          <p class="mt-2">Open comms, decision logs, humane defaults. Merge product & dev backlogs.</p>
+        </div>
+        <div>
+          <h2 class="kicker text-buildly-orange">Data-driven</h2>
+          <p class="mt-2">Ground changes in metrics and user feedback; ship learning, not just features.</p>
+        </div>
+        <div>
+          <h2 class="kicker text-buildly-orange">Continuous feedback</h2>
+          <p class="mt-2">Daily summaries; lightweight demos; AI-assisted PR reviews with human sign-off.</p>
+        </div>
+        <div>
+          <h2 class="kicker text-buildly-orange">Inclusivity & diversity</h2>
+          <p class="mt-2">Structured rituals so <em>every voice is heard</em>. Accessibility across timezones & roles.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 · Comic relief -->
+    <section class="slide" data-title="Comic relief">
+      <h1 class="text-4xl font-extrabold">A little Radical Humor</h1>
+      <div class="mt-6 grid md:grid-cols-2 gap-8 items-center">
+        <img src="/assets/img/about.jpg" alt="Illustration of collaboration" class="img-card"/>
+        <p class="text-lg leading-relaxed">“Even Agile coaches need therapy. At least we don’t charge by the hour for retros.”</p>
+      </div>
+    </section>
+
+    <!-- 6 · Radical Process (AI-ready) -->
+    <section class="slide" data-title="The Radical Process (AI-ready)">
+      <h1 class="text-4xl font-extrabold">The Radical Process (AI‑ready)</h1>
+      <ul class="mt-6 list-disc pl-6 text-lg leading-relaxed">
+        <li><strong>Daily Transparency Check‑ins</strong>: blockers & next actions, not status theater.</li>
+        <li><strong>Open docs</strong>: living specs; link PRs, evaluations, and runbooks.</li>
+        <li><strong>Human‑in‑the‑loop</strong>: AI drafts → human review → automated policy checks.</li>
+        <li><strong>Decision journals</strong>: rationale, alternatives, and expected outcomes.</li>
+        <li><strong>Ethical AI</strong>: bias reviews, dataset notes, and opt‑out pathways.</li>
+      </ul>
+    </section>
+
+    <!-- 7 · Evolving Agile & requirements -->
+    <section class="slide" data-title="Evolving Agile & requirements">
+      <h1 class="text-4xl font-extrabold">Evolving Agile & requirements</h1>
+      <ul class="mt-6 list-disc pl-6 text-lg leading-relaxed">
+        <li>Shift from ceremonies → <strong>outcomes</strong> & <strong>learning</strong>.</li>
+        <li><strong>Living requirements</strong>: executable specs, testable examples, prototypes early.</li>
+        <li><strong>Conversation > tickets</strong>: capture product intent, constraints, risks.</li>
+        <li><strong>Guardrails</strong>: security, privacy, & governance as code.</li>
+        <li><strong>Inclusion</strong>: facilitated feedback loops; rotate facilitation; async paths.</li>
+      </ul>
+    </section>
+
+    <!-- 8 · Therapy break -->
+    <section class="slide" data-title="Therapy break">
+      <h1 class="text-4xl font-extrabold">Therapy break 🛋️</h1>
+      <p class="mt-6 text-lg">Even AI needs a couch sometimes. (We call it a GPU rack.)</p>
+      <img src="/assets/img/about.jpg" alt="Team illustration" class="mt-6 img-card"/>
+    </section>
+
+    <!-- 9 · Buildly Stack -->
+    <section class="slide" data-title="Buildly: the stack">
+      <h1 class="text-4xl font-extrabold">Buildly: the stack</h1>
+      <div class="mt-6 grid md:grid-cols-3 gap-6 text-lg">
+        <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
+          <h3 class="kicker text-buildly-orange">Labs</h3>
+          <p class="mt-2">AI‑assisted product & release management; idea → docs → backlog → roadmap.</p>
+        </div>
+        <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
+          <h3 class="kicker text-buildly-orange">Core</h3>
+          <p class="mt-2">Component‑driven LogicModules, CLI scaffolds, cloud‑native patterns.</p>
+        </div>
+        <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
+          <h3 class="kicker text-buildly-orange">Foundry</h3>
+          <p class="mt-2">Certified agencies & co‑sprints; human oversight; ethical AI practices.</p>
+        </div>
+      </div>
+      <p class="mt-6 text-slate-300">Tooling we meet teams in: GitHub · Slack · CI · Cloud. Docs & decisions are first‑class.</p>
+    </section>
+
+    <!-- 10 · Five key steps -->
+    <section class="slide" data-title="Five key steps">
+      <h1 class="text-4xl font-extrabold">Five key steps</h1>
+      <ol class="mt-6 list-decimal pl-6 text-lg leading-relaxed">
+        <li>Establish a culture of open communication.</li>
+        <li>Make data & decision processes accessible.</li>
+        <li>Encourage open feedback & constructive critique.</li>
+        <li>Publish transparent performance & compensation policies.</li>
+        <li>Integrate transparency into product development & AI ethics.</li>
+      </ol>
+    </section>
+
+    <!-- 11 · Standup Joke -->
+    <section class="slide" data-title="Standup joke">
+      <h1 class="text-4xl font-extrabold">Standup joke of the day</h1>
+      <div class="mt-6 grid md:grid-cols-2 gap-8 items-center">
+        <img src="/assets/img/testimonials/katz.jpg" alt="Cartoon therapist" class="img-card"/>
+        <p class="text-lg leading-relaxed">“Our sprint goal is simple: fewer bugs than features. Aim high.”</p>
+      </div>
+    </section>
+
+    <!-- 12 · Team health & inclusion -->
+    <section class="slide" data-title="Team health & inclusion">
+      <h1 class="text-4xl font-extrabold">Team health & inclusion</h1>
+      <div class="mt-6 grid md:grid-cols-2 gap-8 text-lg">
+        <div>
+          <h2 class="kicker text-buildly-orange">Diversity</h2>
+          <ul class="mt-2 list-disc pl-6">
+            <li>Better problem‑solving and relevance to users.</li>
+            <li>Broader market reach with inclusive products.</li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="kicker text-buildly-orange">Morale</h2>
+          <ul class="mt-2 list-disc pl-6">
+            <li>Psychological safety; celebrate wins & growth.</li>
+            <li>Reduce burnout with clear goals & ethical AI use.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13 · Stakeholder inclusion -->
+    <section class="slide" data-title="Stakeholder inclusion">
+      <h1 class="text-4xl font-extrabold">Stakeholder inclusion</h1>
+      <ul class="mt-6 list-disc pl-6 text-lg leading-relaxed">
+        <li>Invite stakeholders to demos; ask for feedback, at a steady cadence.</li>
+        <li>Openly share values & mission; build trust through visibility.</li>
+        <li>Maintain a knowledge base per product: decisions, metrics, artifacts.</li>
+      </ul>
+    </section>
+
+    <!-- 14 · Cloud-native patterns (optional) -->
+    <section class="slide" data-title="Cloud‑native patterns (Core)">
+      <h1 class="text-4xl font-extrabold">Cloud‑native patterns (Core)</h1>
+      <ul class="mt-6 list-disc pl-6 text-lg leading-relaxed">
+        <li>Loosely‑coupled, share‑nothing services.</li>
+        <li>Chained, Aggregator, Proxy, Async patterns.</li>
+        <li>Micro‑apps where it fits; hybrid where it doesn’t.</li>
+      </ul>
+      <p class="mt-4 text-slate-300">Backed by Buildly Core & marketplace LogicModules.</p>
+    </section>
+
+    <!-- 15 · Next steps -->
+    <section class="slide" data-title="Next steps">
+      <h1 class="text-4xl font-extrabold">Next steps</h1>
+      <ul class="mt-6 list-disc pl-6 text-lg leading-relaxed">
+        <li>Start small: pilot daily transparency & decision logs on one team.</li>
+        <li>Adopt Labs for idea → doc → backlog; integrate with Core scaffolds.</li>
+        <li>Schedule a co‑sprint with a certified agency via Foundry.</li>
+      </ul>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <a href="https://labs.buildly.io" class="block rounded-2xl p-5 border border-white/10 bg-white/5 hover:bg-white/10">labs.buildly.io</a>
+        <a href="https://www.buildly.io" class="block rounded-2xl p-5 border border-white/10 bg-white/5 hover:bg-white/10">buildly.io</a>
+        <a href="https://www.radicaltherapy.dev/book" class="block rounded-2xl p-5 border border-white/10 bg-white/5 hover:bg-white/10">radicaltherapy.dev/book</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Progress Bar -->
+  <div id="progress" class="fixed bottom-0 inset-x-0 h-1 bg-white/5">
+    <div id="progressBar" class="h-full bg-gradient-to-r from-buildly-orange to-buildly-blue w-0"></div>
+  </div>
+
+  <!-- PPTXGenJS (for export) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pptxgenjs/3.12.0/pptxgen.bundle.js" crossorigin="anonymous"></script>
+
+  <!-- Deck logic -->
+  <script>
+    const slides = Array.from(document.querySelectorAll('.slide'))
+    let i = 0
+    const counter = document.getElementById('counter')
+    const bar = document.getElementById('progressBar')
+
+    function show(n){
+      i = (n + slides.length) % slides.length
+      slides.forEach((s, idx)=> s.classList.toggle('active', idx===i))
+      counter.textContent = `${i+1} / ${slides.length}`
+      bar.style.width = `${((i+1)/slides.length)*100}%`
+      document.title = (slides[i].dataset.title || 'Slide') + ' · Buildly'
+    }
+    function next(){ show(i+1) }
+    function prev(){ show(i-1) }
+
+    document.getElementById('nextBtn').addEventListener('click', next)
+    document.getElementById('prevBtn').addEventListener('click', prev)
+    document.getElementById('printBtn').addEventListener('click', ()=> window.print())
+    document.getElementById('helpBtn').addEventListener('click', ()=> alert('Keyboard: → / Space = Next, ← = Prev, P = PDF, E = Export PPTX'))
+
+    // Keyboard navigation
+    window.addEventListener('keydown', (e)=>{
+      if(['ArrowRight','PageDown',' '].includes(e.key)) { e.preventDefault(); next() }
+      if(['ArrowLeft','PageUp'].includes(e.key)) { e.preventDefault(); prev() }
+      if(e.key.toLowerCase()==='p') window.print()
+      if(e.key.toLowerCase()==='e') exportPPTX()
+    })
+
+    // Export to PowerPoint
+    document.getElementById('pptBtn').addEventListener('click', exportPPTX)
+    function exportPPTX(){
+      const pptx = new PptxGenJS()
+      pptx.author = 'Buildly'
+      pptx.company = 'Buildly'
+      pptx.layout = 'LAYOUT_16x9'
+      const BLUE = '0658A1', ORANGE = 'F9943B'
+      slides.forEach((node, idx)=>{
+        const s = pptx.addSlide({ bkgd: 'FFFFFF' })
+        const title = node.dataset.title || (node.querySelector('h1')?.innerText ?? `Slide ${idx+1}`)
+        s.addText(title, { x:0.5, y:0.35, w:9, h:1, fontSize: 32, bold:true, color: BLUE })
+        const bodyEls = Array.from(node.querySelectorAll('li, p'))
+        const body = bodyEls.map(el=> el.innerText.trim()).filter(Boolean).join('\n')
+        if(body){
+          s.addText(body, { x:0.5, y:1.3, w:9, h:5, fontSize: 18, color:'363636', bullet:true, lineSpacingMultiple: 1.2 })
+        }
+        s.addShape(pptx.shapes.RECTANGLE, { x:0, y:6.8, w:10, h:0.2, fill: ORANGE, line:'FFFFFF' })
+      })
+      pptx.writeFile({ fileName: 'Buildly-Radical-Therapy-AI-Age.pptx' })
+    }
+
+    // Init
+    show(0)
+  </script>
+</body>
+</html>

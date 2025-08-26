@@ -27,169 +27,146 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
+  <!-- Tailwind CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top ">
-    <div class="container d-flex align-items-center justify-content-between">
-      <h1 class="logo"><a href="index.html">Radical Therapy Dev</a></h1>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Get Radical</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#partners">Partners</a></li>
-          <li><a class="nav-link scrollto" href="#presentations">Presentations</a></li>
-          <li><a href="https://radicaltherapy.substack.com">Articles</a></li>
-          <li><a href="book.html">Book</a></li>
-          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
+  <!-- Header (Tailwind only) -->
+  <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between">
+      <a href="index.html" class="text-3xl font-bold tracking-tight">Radical Therapy Dev</a>
+      <nav class="flex space-x-6 mt-4 md:mt-0">
+        <a href="#about" class="hover:text-purple-200 transition">About</a>
+        <a href="#features" class="hover:text-purple-200 transition">Features</a>
+        <a href="#partners" class="hover:text-purple-200 transition">Partners</a>
+        <a href="#presentations" class="hover:text-purple-200 transition">Presentations</a>
+        <a href="/presentation.html" class="hover:text-purple-200 transition">Recent Presentation</a>
+        <a href="#standup" class="hover:text-purple-200 transition">Standup</a>
+      </nav>
     </div>
-  </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
-
-    <div class="container-fluid" data-aos="fade-up">
-      <div class="row justify-content-center">
-        <div class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <h1>Radical Therapy for your Development Team</h1>
-          <h2 data-aos="fade-up" data-aos-delay="400" class="aos-init aos-animate">Get Transparent, Communicate and Diversify while <em>Building Better Products</em></h2>
-          <div><a href="#about" class="btn-get-started scrollto">Get Started</a></div>
-        </div>
-        <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
-          <a href="https://link.springer.com/book/10.1007/979-8-8688-0187-7?sap-outbound-id=FD26A1CAC6696FE9E6BB113CDA43EC0AE92D3215"><img src="assets/img/cover.png" class="img-fluid animated" alt="" width="80%"></a>
-        </div>
-      </div>
+  </header>
+  <!-- Hero Section (Tailwind only) -->
+  <section class="flex flex-col md:flex-row items-center justify-between gap-8 py-12 container mx-auto px-4">
+    <div class="flex-1 text-center md:text-left">
+      <h1 class="text-5xl font-extrabold mb-4 text-blue-700">Radical Transparency for Software Teams</h1>
+      <p class="text-lg text-gray-700 mb-6">Revolutionize your team's communication, boost positivity, and build better products with open processes and transparent leadership.</p>
+      <a href="#about" class="inline-block bg-purple-600 text-white px-6 py-3 rounded-lg shadow hover:bg-purple-700 transition">Learn More</a>
     </div>
-
-  </section><!-- End Hero -->
+    <div class="flex-1 flex justify-center">
+      <a href="https://link.springer.com/book/10.1007/979-8-8688-0187-7?sap-outbound-id=FD26A1CAC6696FE9E6BB113CDA43EC0AE92D3215">
+        <img src="assets/img/cover.png" alt="Book Cover" class="rounded-xl shadow-lg w-72 md:w-96">
+      </a>
+    </div>
+  </section>
+  <!-- Reference Section -->
+  <section class="mb-12 text-center container mx-auto px-4">
+    <h2 class="text-3xl font-semibold mb-4">Inspired by Modern Teams</h2>
+    <p class="text-gray-700 text-lg max-w-2xl mx-auto mb-4">Our approach is inspired by the best practices from <a href="https://www.buildly.io" class="text-blue-600 underline">Buildly</a> and <a href="https://labs.buildly.io" class="text-purple-600 underline">Labs.Buildly</a>, focusing on open source, AI-assisted product management, and radical transparency.</p>
+    <div class="flex flex-col md:flex-row justify-center gap-8 mt-6">
+      <a href="https://www.buildly.io" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">Visit Buildly</a>
+      <a href="https://labs.buildly.io" class="bg-purple-600 text-white px-6 py-3 rounded-lg shadow hover:bg-purple-700 transition">Visit Labs.Buildly</a>
+    </div>
+  </section>
 
   <main id="main">
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="row">
-          <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="150">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
-            <h1>Benefits of Radical Transparency in Software Development</h1>
-            <p>Radical transparency is a management philosophy that advocates for complete openness and honesty in communication and decision-making.</p> 
-            <p>In software development, radical transparency involves sharing all relevant information, including goals, metrics, feedback, and progress, 
-              with all team members in real-time. By doing so, teams can improve collaboration, build trust, foster accountability, 
-              enhance decision-making, and promote a culture of continuous improvement.</p> 
-              <ul>
-                <li>Encourages open communication and collaboration among team members</li>
-                <li>Builds trust and fosters a culture of honesty and accountability</li>
-                <li>Improves decision-making by providing more information and insights</li>
-                <li>Facilitates continuous improvement by identifying areas for growth and development</li>
-                </ul>
-                <h2>Positivity for Teams</h2>
-                <ul>
-                <li>Reduces conflicts and misunderstandings by making expectations clear and explicit</li>
-                <li>Increases productivity by eliminating unnecessary bureaucracy and delays</li>
-                <li>Enhances employee engagement and satisfaction by promoting transparency and fairness</li>
-                <li>Helps attract and retain top talent by demonstrating a commitment to openness and transparency</li>
-                <li>Encourages innovation and experimentation by creating a safe space for sharing ideas and feedback</li>
-              </ul>
-            <a href="#counts" class="read-more">Get Started! <i class="bi bi-long-arrow-right"></i></a>
-          </div>
+    <!-- About Section (Tailwind) -->
+    <section id="about" class="py-16 container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="flex-1 flex justify-center mb-8 md:mb-0">
+          <img src="assets/img/about.jpg" alt="About Radical Transparency" class="rounded-xl shadow-lg w-80 md:w-96">
         </div>
-
+        <div class="flex-1">
+          <h2 class="text-3xl font-bold mb-4">Benefits of Radical Transparency in Software Development</h2>
+          <p class="mb-4 text-gray-700">Radical transparency is a management philosophy that advocates for complete openness and honesty in communication and decision-making.</p>
+          <p class="mb-4 text-gray-700">In software development, radical transparency involves sharing all relevant information, including goals, metrics, feedback, and progress, with all team members in real-time. By doing so, teams can improve collaboration, build trust, foster accountability, enhance decision-making, and promote a culture of continuous improvement.</p>
+          <ul class="list-disc list-inside mb-4 text-gray-700">
+            <li>Encourages open communication and collaboration among team members</li>
+            <li>Builds trust and fosters a culture of honesty and accountability</li>
+            <li>Improves decision-making by providing more information and insights</li>
+            <li>Facilitates continuous improvement by identifying areas for growth and development</li>
+          </ul>
+          <h3 class="text-xl font-semibold mb-2">Positivity for Teams</h3>
+          <ul class="list-disc list-inside mb-4 text-gray-700">
+            <li>Reduces conflicts and misunderstandings by making expectations clear and explicit</li>
+            <li>Increases productivity by eliminating unnecessary bureaucracy and delays</li>
+            <li>Enhances employee engagement and satisfaction by promoting transparency and fairness</li>
+            <li>Helps attract and retain top talent by demonstrating a commitment to openness and transparency</li>
+            <li>Encourages innovation and experimentation by creating a safe space for sharing ideas and feedback</li>
+          </ul>
+          <a href="#counts" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-700 transition">Get Started <i class="fas fa-arrow-right"></i></a>
+        </div>
       </div>
-    </section><!-- End About Section -->
+    </section>
 
 
     <!-- ======= Features Section ======= -->
     <section id="features" class="features">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Bootcamp</h2>
-          <p>
-            By implementing these exercises and strategies, teams can improve their communication, collaboration, and overall effectiveness in software development. Radical transparency can help to create a more positive and productive work environment where team members feel valued and supported.
-          </p>
+      <!-- Features Section (Tailwind) -->
+      <section id="features" class="py-16 container mx-auto px-4">
+        <div class="mb-12 text-center">
+          <h2 class="text-3xl font-bold mb-4">Bootcamp</h2>
+          <p class="text-gray-700 max-w-2xl mx-auto">By implementing these exercises and strategies, teams can improve their communication, collaboration, and overall effectiveness in software development. Radical transparency can help to create a more positive and productive work environment where team members feel valued and supported.</p>
         </div>
-
-        <div class="row">
-          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column align-items-lg-center">
-            <div class="icon-box mt-5 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
-              <i class="fas fa-receipt"></i>
-              <h4>Frequent check-ins on GitHub</h4>
-              <p>Not once a day, not at the end of the sprint... every time you finish a piece of functionality... check it in!</p>
+        <div class="flex flex-col md:flex-row gap-12 items-center">
+          <div class="flex-1 space-y-8">
+            <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center">
+              <span class="text-blue-500 text-3xl mb-2"><i class="fas fa-receipt"></i></span>
+              <h4 class="font-semibold mb-2">Frequent check-ins on GitHub</h4>
+              <p class="text-gray-700">Not once a day, not at the end of the sprint... every time you finish a piece of functionality... check it in!</p>
             </div>
-            <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="200">
-              <i class="fas fa-cube"></i>
-              <h4>Positivity in pull requests</h4>
-              <p>When reviewing each other's code, team members should focus on providing constructive feedback rather than pointing out mistakes. By adopting a positive attitude and framing feedback in a helpful way, teams can create a more supportive and collaborative work environment.</p>
+            <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center">
+              <span class="text-green-500 text-3xl mb-2"><i class="fas fa-cube"></i></span>
+              <h4 class="font-semibold mb-2">Positivity in pull requests</h4>
+              <p class="text-gray-700">When reviewing each other's code, team members should focus on providing constructive feedback rather than pointing out mistakes. By adopting a positive attitude and framing feedback in a helpful way, teams can create a more supportive and collaborative work environment.</p>
             </div>
-            <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="300">
-              <i class="fas fa-images"></i>
-              <h4>Setting up training katas for new skills</h4>
-              <p>Kata exercises are short, focused programming challenges that help developers improve their skills in a particular area. By setting up regular kata sessions and inviting team members to participate, teams can create a culture of continuous learning and development.</p>
+            <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center">
+              <span class="text-purple-500 text-3xl mb-2"><i class="fas fa-images"></i></span>
+              <h4 class="font-semibold mb-2">Setting up training katas for new skills</h4>
+              <p class="text-gray-700">Kata exercises are short, focused programming challenges that help developers improve their skills in a particular area. By setting up regular kata sessions and inviting team members to participate, teams can create a culture of continuous learning and development.</p>
             </div>
-            <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="400">
-              <i class="fas fa-shield-alt"></i>
-              <h4>Regular team retrospectives</h4>
-              <p>Retrospectives are regular team meetings where team members reflect on their recent work and discuss ways to improve. By fostering an open and honest dialogue, teams can identify areas for improvement and work together to implement solutions.
-              </p>
+            <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center">
+              <span class="text-yellow-500 text-3xl mb-2"><i class="fas fa-shield-alt"></i></span>
+              <h4 class="font-semibold mb-2">Regular team retrospectives</h4>
+              <p class="text-gray-700">Retrospectives are regular team meetings where team members reflect on their recent work and discuss ways to improve. By fostering an open and honest dialogue, teams can identify areas for improvement and work together to implement solutions.</p>
             </div>
           </div>
-          <div class="image col-lg-6 order-1 order-lg-2 " data-aos="zoom-in" data-aos-delay="100">
-            <img src="assets/img/features.svg" alt="" class="img-fluid">
+          <div class="flex-1 flex justify-center">
+            <img src="assets/img/features.svg" alt="Features" class="rounded-xl shadow-lg w-80 md:w-96">
           </div>
         </div>
-
-      </div>
-    </section><!-- End Features Section -->
+      </section>
 
         <!-- ======= Features Section ======= -->
         <section id="partners" class="features">
-          <div class="container" data-aos="fade-up">
-    
-            <div class="section-title">
-              <h2>Partners</h2>
-              <p>
-                The Radical Therapy team also partners with several thrid party team therapy providers for everything from motivational tools and and processes to software development partners for scalability.  
-                Check out some of our featured partners and add their services to your           
-              </p>
-            </div>
-    
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column align-items-lg-center">
-                <div class="icon-box mt-5 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
-                  <i class="fas fa-receipt"></i>
-                  <h4><a href="https://www.buildly.io">Buildly</a></h4>
-                  <p>Open Source tools for developers and AI assisted product management.  Checkout out the <a href="https://www.buildly.io/foundry">bootstrappers foundry</a> as well.</p>
-                </div>
-                <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="200">
-                  <i class="fas fa-cube-alt"></i>
-                  <h4><a href="https://www.oregonsoftware.com">Oregon Software</a></h4>
-                  <p>Oregon Software is a US based software consulting company that brings a team of US based product managers and software architects to bare on your current software needs, as well as an expanded team of global software developers to solve nearly any software based problem, in your time zone, with leadership and processes that follow the Radical Transprency philosphy and tools.</p>
-                </div>
-                <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="200">
-                  <i class="fas fa-cube-alt"></i>
-                  <h4><a href="https://www.open.build">Open Source Mentoring</a></h4>
-                  <p>Open Build is a US based software non-profit company that teaches senior developers how to support and run open source projects and provides mentorship opportunites for junior developers.</p>
-                </div>
-              </div>
-              <div class="image col-lg-6 order-1 order-lg-2 " data-aos="zoom-in" data-aos-delay="100">
-                <img src="assets/img/features.svg" alt="" class="img-fluid">
-              </div>
-            </div>
-    
+      <!-- Partners Section (Tailwind) -->
+      <section id="partners" class="py-16 container mx-auto px-4">
+        <div class="mb-12 text-center">
+          <h2 class="text-3xl font-bold mb-4">Partners</h2>
+          <p class="text-gray-700 max-w-2xl mx-auto">The Radical Therapy team also partners with several third party team therapy providers for everything from motivational tools and processes to software development partners for scalability. Check out some of our featured partners and add their services to your team.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center">
+            <span class="text-blue-500 text-3xl mb-2"><i class="fas fa-receipt"></i></span>
+            <h4 class="font-bold mb-2"><a href="https://www.buildly.io" class="text-blue-600 underline">Buildly</a></h4>
+            <p class="text-gray-700">Open Source tools for developers and AI assisted product management. Check out the <a href="https://www.buildly.io/foundry" class="text-blue-600 underline">Bootstrappers Foundry</a> as well.</p>
           </div>
-        </section><!-- End Features Section -->
+          <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center">
+            <span class="text-green-500 text-3xl mb-2"><i class="fas fa-cube"></i></span>
+            <h4 class="font-bold mb-2"><a href="https://www.oregonsoftware.com" class="text-green-600 underline">Oregon Software</a></h4>
+            <p class="text-gray-700">US-based consulting, product managers, and software architects, with global developer teams following Radical Transparency.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center">
+            <span class="text-purple-500 text-3xl mb-2"><i class="fas fa-cube"></i></span>
+            <h4 class="font-bold mb-2"><a href="https://www.open.build" class="text-purple-600 underline">Open Source Mentoring</a></h4>
+            <p class="text-gray-700">Non-profit teaching senior devs to run open source projects and mentoring juniors.</p>
+          </div>
+        </div>
+      </section>
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials section-bg">
@@ -355,62 +332,38 @@
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="fas fa-chevron-right"></i> <a href="#">Dev Team Therapy</a></li>
-              <li><i class="fas fa-chevron-right"></i> <a href="#">Dev Team Procurement</a></li>
-              <li><i class="fas fa-chevron-right"></i> <a href="#">Product Management Guidance</a></li>
-              <li><i class="fas fa-chevron-right"></i> <a href="#">Process and Infrastructure Review</a></li>
-              <li><i class="fas fa-chevron-right"></i> <a href="#">Daily Standup Comedy Therapy</a></li>
-            </ul>
-          </div>
-
-        </div>
+            <footer class="bg-gray-900 text-white py-8 mt-12">
+              <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                  <h3 class="text-xl font-bold mb-2">Radical Therapy Dev</h3>
+                  <p>Brooklyn, NY<br>United States<br><strong>Email:</strong> info@open.build</p>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2">Useful Links</h4>
+                  <ul class="space-y-1">
+                    <li><a href="index.html" class="hover:underline">Home</a></li>
+                    <li><a href="branch.html" class="hover:underline">GitHub and Branching Strategies</a></li>
+                    <li><a href="articles.html" class="hover:underline">Product Management Articles</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2">Our Services</h4>
+                  <ul class="space-y-1">
+                    <li>Dev Team Therapy</li>
+                    <li>Dev Team Procurement</li>
+                    <li>Product Management Guidance</li>
+                    <li>Process and Infrastructure Review</li>
+                    <li>Daily Standup Comedy Therapy</li>
+                  </ul>
+                </div>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                  <a href="https://www.twitter.com/radtherapydev" class="hover:text-blue-400"><i class="fab fa-twitter text-xl"></i></a>
+                  <a href="https://www.linkedin.com/company/openbuild" class="hover:text-blue-300"><i class="fab fa-linkedin text-xl"></i></a>
+                </div>
+              </div>
+              <div class="container mx-auto text-center mt-6">
+                <p class="text-sm">&copy; 2025 Radical Therapy Dev. All Rights Reserved</p>
+                <p class="text-xs">Inspired by <a href="https://www.buildly.io" class="underline">Buildly</a> and <a href="https://labs.buildly.io" class="underline">Labs.Buildly</a></p>
+              </div>
+            </footer>
       </div>
-    </div>
-
-    <div class="container">
-
-      <div class="copyright-wrap d-md-flex py-4">
-        <div class="me-md-auto text-center text-md-start">
-          <div class="copyright">
-            &copy; Copyright <strong><span>Radical Therapy Dev</span></strong>. All Rights Reserved
-          </div>
-          <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/techie-free-skin-bootstrap-3/ -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-          </div>
-        </div>
-        <div class="social-links text-center text-md-right pt-3 pt-md-0">
-          <a href="https://www.twitter.com/radtherapydev" class="twitter"><i class="fas fal-twitter"></i></a>
-          <a href="https://www.linkedin.com/company/openbuild" class="linkedin"><i class="fas fal-linkedin"></i></a>
-        </div>
-      </div>
-
-    </div>
-  </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-  <!-- Feth Jokes JS File -->
-  <script src="assets/js/jokes.js"></script>
-
-</body>
-
-</html>

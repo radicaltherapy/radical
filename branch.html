@@ -18,7 +18,8 @@
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Removed Bootstrap CSS for Tailwind-only styling -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
@@ -32,9 +33,10 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top ">
-    <div class="container d-flex align-items-center justify-content-between">
-      <h1 class="logo"><a href="index.html">Radical Therapy Dev</a></h1>
+  <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between">
+      <a href="index.html" class="text-3xl font-bold tracking-tight">Radical Therapy Dev</a>
+    </div>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -58,24 +60,23 @@
 
   <main id="main">
 
-    <!-- ======= Development Practices Section ======= -->
-    <section id="development-practices" class="development-practices">
-      <div class="container">
-    <div class="row">
-      <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="150">
-        <img src="assets/img/release-branches.png" class="img-fluid" alt="Branch Management">
-      </div>
-      <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
-        <h1>Effective Development Practices</h1>
-        <p>In modern software development, adopting certain practices and workflows can greatly improve collaboration, productivity, and code quality.</p>
-        <p>Here are three essential development practices:</p>
-        <ul>
-          <li><a href="#semantic-versioning">Semantic Versioning</a></li>
-          <li><a href="#branch-management">Branch Management</a></li>
-          <li><a href="#pull-requests">Pull Requests</a></li>
-        </ul>
-        <p>By implementing these development practices, teams can achieve:</p>
-        <ul>
+    <!-- Development Practices Section (Tailwind) -->
+    <section id="development-practices" class="py-16 container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="flex-1 flex justify-center mb-8 md:mb-0">
+          <img src="assets/img/release-branches.png" alt="Branch Management" class="rounded-xl shadow-lg w-80 md:w-96">
+        </div>
+        <div class="flex-1">
+          <h2 class="text-3xl font-bold mb-4">Effective Development Practices</h2>
+          <p class="mb-4 text-gray-700">In modern software development, adopting certain practices and workflows can greatly improve collaboration, productivity, and code quality.</p>
+          <p class="mb-4 text-gray-700">Here are three essential development practices:</p>
+          <ul class="list-disc list-inside mb-4 text-gray-700">
+            <li><a href="#semantic-versioning" class="text-blue-600 underline">Semantic Versioning</a></li>
+            <li><a href="#branch-management" class="text-blue-600 underline">Branch Management</a></li>
+            <li><a href="#pull-requests" class="text-blue-600 underline">Pull Requests</a></li>
+          </ul>
+          <p class="mb-2 text-gray-700">By implementing these development practices, teams can achieve:</p>
+          <ul class="list-disc list-inside text-gray-700">
           <li>Clear versioning and release management</li>
           <li>Efficient and organized development workflows</li>
           <li>Effective collaboration and code review processes</li>
