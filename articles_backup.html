@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Radical Therapy for Teams</title>
+  <meta content="Radical Therapy for Software Teams, Book and Service to help overcome the number one obstacle to technical product success by revolutionizing communication within your team, Build an environment where positivity thrives and transparent processes are your guiding light, Learn how to keep a fast paced agile process and still work with creatives and research without frustration" name="description">
+  <meta content="Book, Software Development,Team Dynamics,Cloud-Native Development,Remote Work,Agile,Growth Mindset,Transparency,Project Management,Positive Feedback,Adaptability,Open Source Collaboration,Team Motivation,Team Building" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <!-- Removed Bootstrap CSS for Tailwind-only styling -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between">
+      <a href="index.html" class="text-3xl font-bold tracking-tight">Radical Therapy Dev</a>
+    </div>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+  
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active" href="index.html#hero">Get Radical</a></li>
+            <li><a class="nav-link scrollto" href="index.html#about">About</a></li>
+            <li><a class="nav-link scrollto" href="index.html#services">Services</a></li>
+            <li><a class="nav-link scrollto" href="index.html#partners">Partners</a></li>
+            <li><a class="nav-link scrollto" href="index.html#pricing">Pricing</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="https://radicaltherapy.substack.com">More</a></li>
+            <li><a href="book.html">Book</a></li>
+            <li><a class="getstarted scrollto" href="index.html#about">Get Started</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- Breadcrumbs (Tailwind) -->
+    <section class="bg-gray-100 py-6 mb-8">
+      <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+        <h2 class="text-2xl font-bold mb-2 md:mb-0">Developer Articles</h2>
+        <ol class="flex space-x-2 text-gray-600">
+          <li><a href="index.html" class="hover:underline">Home</a></li>
+          <li>/</li>
+          <li>Dev Articles</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="py-8 container mx-auto px-4">
+      <div class="bg-white rounded-lg shadow p-6">
+        <h3 class="text-xl font-semibold mb-4">Latest Developer Articles</h3>
+        <!-- RSS feed or articles list would go here -->
+        <div id="articles-list">
+          <!-- Articles will be loaded here by script -->
+        </div>
+      </div>
+      <script>
+        // Define the RSS feed URL
+        const rssFeedUrl = 'https://www.buildly.io/news/feed/';
+
+        // Define the category to filter
+        const category = 'developer';
+
+        // Define the number of items per page
+        const itemsPerPage = 10;
+
+        // Fetch the RSS feed data
+        fetch(rssFeedUrl)
+          .then(response => response.text())
+          .then(xmlString => {
+
+            // Parse the XML data
+            const parser = new DOMParser();
+            const xml = parser.parseFromString(xmlString, 'text/xml');
+
+            console.log(xml);
+
+            // Filter the entries based on the category
+            const entries = Array.from(xml.getElementsByTagName('item'))
+            //  .filter(item => Array.from(item.getElementsByTagName('category'))
+            //    .some(cat => cat.textContent === category));
+
+            // Calculate the number of pages
+            const numPages = Math.ceil(entries.length / itemsPerPage);
+
+            // Get the container element for the paginated list
+            const container = document.getElementById('paginated-list-container');
+
+            // Generate the pagination controls
+            const pagination = document.createElement('nav');
+            pagination.innerHTML = `
+              <ul class="pagination justify-content-center">
+                ${Array.from({ length: numPages }, (_, i) => `
+                  <li class="page-item${i === 0 ? ' active' : ''}">
+                    <a class="page-link" href="#" data-page="${i}">${i + 1}</a>
+                  </li>
+                `).join('')}
+              </ul>
+            `;
+            container.appendChild(pagination);
+
+            // Generate the initial page of entries
+            generateEntriesPage(0);
+
+            // Define a function to generate a page of entries
+            function generateEntriesPage(pageIndex) {
+              // Clear the existing entries
+              container.querySelectorAll('.entry').forEach(entry => entry.remove());
+
+              // Get the entries for the current page
+              const startIndex = pageIndex * itemsPerPage;
+              const endIndex = startIndex + itemsPerPage;
+              const pageEntries = entries.slice(startIndex, endIndex);
+
+              // Generate the HTML elements for the entries
+              const entriesHtml = pageEntries.map(entry => `
+                <div class="card mb-3 entry">
+                  <div class="card-body">
+                    <h5 class="card-title">${entry.getElementsByTagName('title')[0].textContent}</h5>
+                    <p class="card-text">${entry.getElementsByTagName('description')[0].textContent}</p>
+                    <a class="button lg" href="${entry.getElementsByTagName('link')[0].textContent}">READ</a> 
+                  </div>
+                </div>
+              `).join('');
+
+              // Add the entries to the container
+              const entriesContainer = document.createElement('div');
+              entriesContainer.innerHTML = entriesHtml;
+              container.appendChild(entriesContainer);
+            }
+
+            // Attach event listeners to the pagination links
+            pagination.querySelectorAll('a').forEach(link => {
+              link.addEventListener('click', event => {
+                event.preventDefault();
+                pagination.querySelectorAll('.active').forEach(activeLink => activeLink.classList.remove('active'));
+                link.parentNode.classList.add('active');
+                generateEntriesPage(parseInt(link.getAttribute('data-page')));
+              });
+            });
+          });
+
+      </script>
+      <div id="paginated-list-container" class="container">
+        
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Radical Therapy Dev</h3>
+            <p>
+              Brooklyn, NY <br>
+              United States <br><br>
+              <strong>Email:</strong> info@open.build<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="branch.html">GitHub and Branching Strategies</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="articles.html">Product Mangement Articles</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Dev Team Therapy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Dev Team Procurement</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management Guidance</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Process and Infrastructure Review</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Daily Standup Comedy Therapy</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="copyright-wrap d-md-flex py-4">
+        <div class="me-md-auto text-center text-md-start">
+          <div class="copyright">
+            &copy; Copyright <strong><span>Radical Therapy Dev</span></strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/techie-free-skin-bootstrap-3/ -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          </div>
+        </div>
+        <div class="social-links text-center text-md-right pt-3 pt-md-0">
+          <a href="https://www.twitter.com/radtherapydev" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="https://www.linkedin.com/company/openbuild" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Feth Jokes JS File -->
+  <script src="assets/js/jokes.js"></script>
+
+</body>
+
+</html>
