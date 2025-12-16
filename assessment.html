@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Readiness Self-Assessment - Radical Therapy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-bg { background: linear-gradient(135deg, #1e3a8a 0%, #6b21a8 100%); }
+    .gradient-text { background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .radio-option {
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .radio-option:hover {
+      transform: translateX(4px);
+    }
+    .radio-option input:checked + label {
+      font-weight: 600;
+      color: #1e40af;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Header -->
+  <header class="gradient-bg text-white py-8">
+    <div class="max-w-4xl mx-auto px-6">
+      <a href="index.html" class="text-white hover:text-gray-200 mb-4 inline-block">← Back to Home</a>
+      <h1 class="text-4xl font-bold mt-2">AI Readiness Self-Assessment</h1>
+      <p class="text-xl mt-2 text-blue-100">Discover your AI-Agile gap in 5 minutes</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-4xl mx-auto px-6 py-12">
+    
+    <!-- Introduction -->
+    <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+      <h2 class="text-3xl font-bold mb-6 gradient-text">How Ready Is Your Team for RAD Process?</h2>
+      <p class="text-xl text-gray-700 leading-relaxed mb-6">
+        Answer 10 quick questions to get your AI Readiness Score and personalized recommendations for transitioning from Agile to AI-native development.
+      </p>
+      <div class="bg-blue-50 border-l-4 border-blue-600 p-5 rounded">
+        <p class="text-gray-800">
+          <strong>What you'll get:</strong> Your AI-Agile gap score (0-30), personalized next steps, and resources tailored to your situation.
+        </p>
+      </div>
+    </section>
+
+    <!-- Assessment Form -->
+    <form id="assessment-form" class="space-y-8">
+      
+      <!-- Question 1 -->
+      <section class="bg-white rounded-lg shadow-lg p-8">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">1. Does your team use AI coding tools (Copilot, Claude, ChatGPT) regularly?</h3>
+        <div class="space-y-3">
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q1a" name="q1" value="3" class="mt-1 mr-3">
+            <label for="q1a" class="text-gray-700 cursor-pointer">Yes, daily</label>
+          </div>
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q1b" name="q1" value="1" class="mt-1 mr-3">
+            <label for="q1b" class="text-gray-700 cursor-pointer">Sometimes</label>
+          </div>
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q1c" name="q1" value="0" class="mt-1 mr-3">
+            <label for="q1c" class="text-gray-700 cursor-pointer">Not yet</label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Question 2 -->
+      <section class="bg-white rounded-lg shadow-lg p-8">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">2. Does your current process (Agile/Scrum) account for AI-accelerated development?</h3>
+        <div class="space-y-3">
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q2a" name="q2" value="3" class="mt-1 mr-3">
+            <label for="q2a" class="text-gray-700 cursor-pointer">Yes, we've adapted it</label>
+          </div>
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q2b" name="q2" value="1" class="mt-1 mr-3">
+            <label for="q2b" class="text-gray-700 cursor-pointer">Somewhat</label>
+          </div>
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q2c" name="q2" value="0" class="mt-1 mr-3">
+            <label for="q2c" class="text-gray-700 cursor-pointer">No, we're still planning like it's 2015</label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Question 3 -->
+      <section class="bg-white rounded-lg shadow-lg p-8">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">3. How much coordination overhead does your team have (standups, sprint planning, status updates)?</h3>
+        <div class="space-y-3">
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q3a" name="q3" value="3" class="mt-1 mr-3">
+            <label for="q3a" class="text-gray-700 cursor-pointer">Minimal</label>
+          </div>
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q3b" name="q3" value="1" class="mt-1 mr-3">
+            <label for="q3b" class="text-gray-700 cursor-pointer">Moderate (5-10 hours/week per person)</label>
+          </div>
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q3c" name="q3" value="0" class="mt-1 mr-3">
+            <label for="q3c" class="text-gray-700 cursor-pointer">Excessive (10+ hours/week)</label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Question 4 -->
+      <section class="bg-white rounded-lg shadow-lg p-8">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">4. Could AI automate most of your coordination work?</h3>
+        <div class="space-y-3">
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q4a" name="q4" value="3" class="mt-1 mr-3">
+            <label for="q4a" class="text-gray-700 cursor-pointer">Yes, absolutely</label>
+          </div>
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q4b" name="q4" value="1" class="mt-1 mr-3">
+            <label for="q4b" class="text-gray-700 cursor-pointer">Maybe some of it</label>
+          </div>
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q4c" name="q4" value="0" class="mt-1 mr-3">
+            <label for="q4c" class="text-gray-700 cursor-pointer">No, we need human coordination</label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Question 5 -->
+      <section class="bg-white rounded-lg shadow-lg p-8">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">5. Do you measure your team's success by velocity metrics or actual outcomes?</h3>
+        <div class="space-y-3">
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q5a" name="q5" value="3" class="mt-1 mr-3">
+            <label for="q5a" class="text-gray-700 cursor-pointer">Outcomes</label>
+          </div>
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q5b" name="q5" value="1" class="mt-1 mr-3">
+            <label for="q5b" class="text-gray-700 cursor-pointer">Mix of both</label>
+          </div>
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q5c" name="q5" value="0" class="mt-1 mr-3">
+            <label for="q5c" class="text-gray-700 cursor-pointer">Velocity/story points</label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Question 6 -->
+      <section class="bg-white rounded-lg shadow-lg p-8">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">6. How often do your sprint commitments get disrupted?</h3>
+        <div class="space-y-3">
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q6a" name="q6" value="3" class="mt-1 mr-3">
+            <label for="q6a" class="text-gray-700 cursor-pointer">Rarely</label>
+          </div>
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q6b" name="q6" value="1" class="mt-1 mr-3">
+            <label for="q6b" class="text-gray-700 cursor-pointer">Occasionally</label>
+          </div>
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q6c" name="q6" value="0" class="mt-1 mr-3">
+            <label for="q6c" class="text-gray-700 cursor-pointer">Constantly</label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Question 7 -->
+      <section class="bg-white rounded-lg shadow-lg p-8">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">7. Does your team struggle to maintain flow state?</h3>
+        <div class="space-y-3">
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q7a" name="q7" value="3" class="mt-1 mr-3">
+            <label for="q7a" class="text-gray-700 cursor-pointer">No, flow is protected</label>
+          </div>
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q7b" name="q7" value="1" class="mt-1 mr-3">
+            <label for="q7b" class="text-gray-700 cursor-pointer">Sometimes</label>
+          </div>
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q7c" name="q7" value="0" class="mt-1 mr-3">
+            <label for="q7c" class="text-gray-700 cursor-pointer">Yes, constant context switching</label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Question 8 -->
+      <section class="bg-white rounded-lg shadow-lg p-8">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">8. Would your team benefit from AI-assisted planning and coordination?</h3>
+        <div class="space-y-3">
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q8a" name="q8" value="3" class="mt-1 mr-3">
+            <label for="q8a" class="text-gray-700 cursor-pointer">Definitely yes</label>
+          </div>
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q8b" name="q8" value="1" class="mt-1 mr-3">
+            <label for="q8b" class="text-gray-700 cursor-pointer">Probably</label>
+          </div>
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q8c" name="q8" value="0" class="mt-1 mr-3">
+            <label for="q8c" class="text-gray-700 cursor-pointer">Maybe</label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Question 9 -->
+      <section class="bg-white rounded-lg shadow-lg p-8">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">9. Is your current PM/project management tool AI-native or legacy with AI bolted on?</h3>
+        <div class="space-y-3">
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q9a" name="q9" value="3" class="mt-1 mr-3">
+            <label for="q9a" class="text-gray-700 cursor-pointer">AI-native</label>
+          </div>
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q9b" name="q9" value="1" class="mt-1 mr-3">
+            <label for="q9b" class="text-gray-700 cursor-pointer">Legacy with some AI features</label>
+          </div>
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q9c" name="q9" value="0" class="mt-1 mr-3">
+            <label for="q9c" class="text-gray-700 cursor-pointer">No AI capabilities</label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Question 10 -->
+      <section class="bg-white rounded-lg shadow-lg p-8">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">10. Are you ready to move beyond Agile to an AI-powered methodology?</h3>
+        <div class="space-y-3">
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q10a" name="q10" value="3" class="mt-1 mr-3">
+            <label for="q10a" class="text-gray-700 cursor-pointer">Absolutely ready</label>
+          </div>
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q10b" name="q10" value="1" class="mt-1 mr-3">
+            <label for="q10b" class="text-gray-700 cursor-pointer">Exploring options</label>
+          </div>
+          <div class="radio-option flex items-start">
+            <input type="radio" id="q10c" name="q10" value="0" class="mt-1 mr-3">
+            <label for="q10c" class="text-gray-700 cursor-pointer">Already there</label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Submit Button -->
+      <div class="text-center">
+        <button type="submit" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-12 py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition text-lg shadow-lg">
+          Calculate My AI Readiness Score
+        </button>
+      </div>
+    </form>
+
+    <!-- Results Section (Hidden Initially) -->
+    <section id="results" class="hidden">
+      <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <h2 class="text-3xl font-bold mb-6 gradient-text">Your AI Readiness Score</h2>
+        <div class="text-center mb-8">
+          <div class="inline-block">
+            <div class="text-6xl font-bold gradient-text mb-2" id="score-display">0</div>
+            <div class="text-gray-600 text-lg">out of 30 points</div>
+          </div>
+        </div>
+        <div id="score-interpretation" class="mb-8"></div>
+        <div id="recommendations" class="space-y-6"></div>
+      </div>
+
+      <div class="text-center">
+        <a href="index.html" class="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition">
+          Back to Home
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="gradient-bg text-white py-8 mt-12">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <p class="text-blue-100">
+        Part of the Radical Therapy Starter Kit • 
+        <a href="https://www.buildly.io/rad-process" target="_blank" class="text-white hover:underline">Learn About RAD Process</a> • 
+        <a href="https://labs.buildly.io" target="_blank" class="text-white hover:underline">Try Buildly Labs</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('assessment-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Calculate score
+      let score = 0;
+      for (let i = 1; i <= 10; i++) {
+        const answer = document.querySelector(`input[name="q${i}"]:checked`);
+        if (answer) {
+          score += parseInt(answer.value);
+        }
+      }
+      
+      // Display score
+      document.getElementById('score-display').textContent = score;
+      
+      // Interpretation and recommendations
+      let interpretation = '';
+      let recommendations = [];
+      
+      if (score >= 0 && score <= 15) {
+        interpretation = `
+          <div class="p-6 bg-blue-50 border-l-4 border-blue-600 rounded">
+            <h3 class="text-2xl font-bold text-blue-900 mb-3">AI-Curious, Agile-Comfortable</h3>
+            <p class="text-gray-800 leading-relaxed">
+              You're exploring AI tools but your Agile process still feels mostly functional. That's okay—but be aware: 
+              as AI adoption increases, the gap between your tools and your process will widen. Start learning now.
+            </p>
+          </div>
+        `;
+        recommendations = [
+          {
+            title: '📖 Start with the Primer',
+            description: 'Understand why AI will eventually make your Agile process obsolete.',
+            link: 'primer.html',
+            linkText: 'Read the Radical Therapy Primer'
+          },
+          {
+            title: '🤖 Ask the GPT',
+            description: 'Get personalized answers about how AI might impact your specific workflow.',
+            link: 'gpt-access.html',
+            linkText: 'Access the Radical Therapy GPT'
+          },
+          {
+            title: '📚 Read the Book',
+            description: 'Deep dive into the three foundations of Radical Therapy.',
+            link: 'https://link.springer.com/book/10.1007/979-8-8688-0297-3',
+            linkText: 'Get the Book'
+          }
+        ];
+      } else if (score >= 16 && score <= 25) {
+        interpretation = `
+          <div class="p-6 bg-purple-50 border-l-4 border-purple-600 rounded">
+            <h3 class="text-2xl font-bold text-purple-900 mb-3">Feeling the AI-Agile Gap</h3>
+            <p class="text-gray-800 leading-relaxed">
+              You're using AI tools, but your Agile process isn't keeping up. You've probably noticed: sprint planning 
+              feels disconnected from how fast AI helps you ship. Coordination overhead is eating the time AI saves. 
+              You're ready to explore RAD Process.
+            </p>
+          </div>
+        `;
+        recommendations = [
+          {
+            title: '📋 Learn RAD Process',
+            description: 'Get the step-by-step guide to transition from sprint planning to AI-adaptive delivery.',
+            link: 'rad-process-guide.html',
+            linkText: 'Read the RAD Process Planning Guide'
+          },
+          {
+            title: '⚡ Explore Buildly Labs',
+            description: 'See how AI-native product management can eliminate coordination overhead.',
+            link: 'https://labs.buildly.io',
+            linkText: 'Try Buildly Labs Free'
+          },
+          {
+            title: '🤖 Ask the GPT',
+            description: 'Get specific advice on transitioning your team to RAD Process.',
+            link: 'gpt-access.html',
+            linkText: 'Access the GPT Coach'
+          }
+        ];
+      } else if (score >= 26 && score <= 30) {
+        interpretation = `
+          <div class="p-6 bg-green-50 border-l-4 border-green-600 rounded">
+            <h3 class="text-2xl font-bold text-green-900 mb-3">Ready for RAD Process</h3>
+            <p class="text-gray-800 leading-relaxed">
+              Your Agile process is actively holding back your AI-powered team. You already know it. Sprint commitments 
+              feel like theater. Standups waste time. Story points are meaningless. You're ready to adopt RAD Process 
+              and implement it through Buildly Labs.
+            </p>
+          </div>
+        `;
+        recommendations = [
+          {
+            title: '⚡ Start with Buildly Labs',
+            description: 'Book a demo or try a free workspace. You\'re ready to implement RAD Process now.',
+            link: 'https://labs.buildly.io',
+            linkText: 'Try Buildly Labs Free'
+          },
+          {
+            title: '📋 Read the RAD Process Guide',
+            description: 'Get the complete transition playbook from Agile to RAD Process.',
+            link: 'rad-process-guide.html',
+            linkText: 'Read the Planning Guide'
+          },
+          {
+            title: '💬 Talk to Greg',
+            description: 'Want guidance on implementing RAD Process in your organization? Let\'s talk.',
+            link: 'mailto:greg@buildly.io',
+            linkText: 'Email Greg Directly'
+          }
+        ];
+      }
+      
+      // Inject interpretation
+      document.getElementById('score-interpretation').innerHTML = interpretation;
+      
+      // Inject recommendations
+      const recsContainer = document.getElementById('recommendations');
+      recsContainer.innerHTML = recommendations.map(rec => `
+        <div class="p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-200">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">${rec.title}</h3>
+          <p class="text-gray-700 mb-4">${rec.description}</p>
+          <a href="${rec.link}" ${rec.link.startsWith('http') ? 'target="_blank"' : ''} class="text-blue-600 hover:text-blue-800 font-semibold">
+            ${rec.linkText} →
+          </a>
+        </div>
+      `).join('');
+      
+      // Show results, hide form
+      document.getElementById('assessment-form').classList.add('hidden');
+      document.getElementById('results').classList.remove('hidden');
+      
+      // Scroll to results
+      document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>

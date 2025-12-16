@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAD Process Planning Guide - Replace Sprints with AI-Adaptive Delivery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-bg { background: linear-gradient(135deg, #1e3a8a 0%, #6b21a8 100%); }
+    .gradient-text { background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .step-number {
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    @media print {
+      .no-print { display: none; }
+      body { background: white; }
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Header -->
+  <header class="gradient-bg text-white py-8 no-print">
+    <div class="max-w-4xl mx-auto px-6">
+      <a href="index.html" class="text-white hover:text-gray-200 mb-4 inline-block">← Back to Home</a>
+      <h1 class="text-4xl font-bold mt-2">RAD Process Planning Guide</h1>
+      <p class="text-xl mt-2 text-blue-100">Replace Sprints with AI-Adaptive Delivery</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-4xl mx-auto px-6 py-12 bg-white my-8 rounded-lg shadow-lg">
+    
+    <!-- Introduction -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-6 gradient-text">What Is RAD Process Planning?</h2>
+      <p class="text-xl text-gray-700 leading-relaxed mb-6">
+        RAD Process (Rapid Adaptive Development) planning replaces fixed sprint commitments with AI-assisted, continuously adaptive delivery.
+      </p>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Instead of estimating story points and committing to 2-week sprints, you let AI help you plan based on real-time velocity, changing priorities, and actual outcomes.
+      </p>
+      <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded">
+        <p class="text-gray-800 font-semibold mb-2">The Core Shift:</p>
+        <p class="text-gray-700">
+          Agile asks: "What can we commit to shipping in 2 weeks?"<br>
+          RAD Process asks: "What outcome do we want to create, and how can AI help us get there fastest?"
+        </p>
+      </div>
+    </section>
+
+    <!-- The Workflow -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-8 gradient-text">The 5-Step RAD Process Workflow</h2>
+      
+      <!-- Step 1 -->
+      <div class="mb-10 flex gap-6">
+        <div class="step-number">1</div>
+        <div class="flex-1">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-4">Define Outcomes, Not Features</h3>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            What change do you want to create? What does success look like? AI can help you break down outcomes into shippable increments, but humans define what success means.
+          </p>
+          <div class="bg-purple-50 p-5 rounded-lg border border-purple-200">
+            <p class="font-semibold text-purple-900 mb-2">Example:</p>
+            <p class="text-gray-700 mb-3">❌ <strong>Feature thinking:</strong> "Add OAuth login with Google and GitHub"</p>
+            <p class="text-gray-700">✅ <strong>Outcome thinking:</strong> "Users can securely access their account from any device without remembering passwords"</p>
+          </div>
+          <div class="mt-4 p-4 bg-gray-50 rounded">
+            <p class="text-sm text-gray-600 mb-2"><strong>How AI helps:</strong></p>
+            <p class="text-sm text-gray-700">AI can suggest implementation paths, identify edge cases, and break outcomes into smaller milestones—but you define what "success" means for your users and business.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="mb-10 flex gap-6">
+        <div class="step-number">2</div>
+        <div class="flex-1">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-4">Let AI Map Dependencies and Risks</h3>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            Instead of manual dependency mapping in sprint planning, use Buildly Labs to automatically surface blockers, dependencies, and risks. AI analyzes your codebase, team velocity, and external dependencies in real time.
+          </p>
+          <div class="bg-blue-50 p-5 rounded-lg border border-blue-200">
+            <p class="font-semibold text-blue-900 mb-3">What AI surfaces automatically:</p>
+            <ul class="space-y-2 text-gray-700">
+              <li>✓ Code dependencies that might block this work</li>
+              <li>✓ Team members who need to be involved</li>
+              <li>✓ External API or infrastructure dependencies</li>
+              <li>✓ Similar features you've shipped before (with velocity data)</li>
+              <li>✓ Risks based on complexity and past patterns</li>
+            </ul>
+          </div>
+          <div class="mt-4 p-4 bg-gray-50 rounded">
+            <p class="text-sm text-gray-600 mb-2"><strong>Why this matters:</strong></p>
+            <p class="text-sm text-gray-700">Sprint planning meetings spend hours mapping dependencies manually. AI does it in seconds—and updates continuously as conditions change.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="mb-10 flex gap-6">
+        <div class="step-number">3</div>
+        <div class="flex-1">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-4">Adaptive Prioritization</h3>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            Priorities change. RAD Process embraces this. Instead of locking in sprint commitments, use AI to continuously reprioritize based on real conditions.
+          </p>
+          <div class="bg-green-50 p-5 rounded-lg border border-green-200">
+            <p class="font-semibold text-green-900 mb-3">AI prioritizes based on:</p>
+            <ul class="space-y-2 text-gray-700">
+              <li><strong>Business value shifts:</strong> Customer feedback changes what matters most</li>
+              <li><strong>Technical discoveries:</strong> A dependency breaks or a simpler path emerges</li>
+              <li><strong>Team velocity changes:</strong> AI completed a task faster than expected</li>
+              <li><strong>External dependencies:</strong> A third-party API becomes available (or breaks)</li>
+            </ul>
+          </div>
+          <div class="mt-4 p-4 bg-gray-50 rounded">
+            <p class="text-sm text-gray-600 mb-2"><strong>The mental shift:</strong></p>
+            <p class="text-sm text-gray-700">Sprint commitments punish adaptation. RAD Process rewards it. When conditions change, you adjust—without guilt or lengthy replanning meetings.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="mb-10 flex gap-6">
+        <div class="step-number">4</div>
+        <div class="flex-1">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-4">Maintain Flow, Not Sprint Cadence</h3>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            Stop forcing work into 2-week boxes. RAD Process optimizes for continuous flow. Ship when ready, not when the sprint ends.
+          </p>
+          <div class="bg-purple-50 p-5 rounded-lg border border-purple-200">
+            <p class="font-semibold text-purple-900 mb-3">What this looks like:</p>
+            <ul class="space-y-2 text-gray-700">
+              <li>• <strong>Continuous deployment:</strong> Ship features as they're ready, not at sprint boundaries</li>
+              <li>• <strong>No artificial deadlines:</strong> Work is done when it's done well, not when the sprint timer expires</li>
+              <li>• <strong>Flow-optimized work:</strong> Minimize context switching, protect deep work time</li>
+              <li>• <strong>AI-assisted status:</strong> No daily standups—AI generates real-time status for stakeholders</li>
+            </ul>
+          </div>
+          <div class="mt-4 p-4 bg-gray-50 rounded">
+            <p class="text-sm text-gray-600 mb-2"><strong>How to measure flow:</strong></p>
+            <p class="text-sm text-gray-700">Track cycle time (idea to production), developer satisfaction, and defect rates. Ignore story points and sprint velocity—they measure compliance, not outcomes.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="mb-10 flex gap-6">
+        <div class="step-number">5</div>
+        <div class="flex-1">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-4">AI-Generated Insights, Not Manual Retros</h3>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            Why wait 2 weeks for a retrospective to discover what's broken? Buildly Labs automatically surfaces insights in real time.
+          </p>
+          <div class="bg-blue-50 p-5 rounded-lg border border-blue-200">
+            <p class="font-semibold text-blue-900 mb-3">What AI reveals continuously:</p>
+            <ul class="space-y-2 text-gray-700">
+              <li>🚧 <strong>What's blocking flow:</strong> Dependencies, context switching, coordination overhead</li>
+              <li>⏱️ <strong>Where the team is spending time:</strong> Meetings, reviews, coding, debugging</li>
+              <li>🔄 <strong>What's creating coordination overhead:</strong> Manual handoffs, status updates, alignment meetings</li>
+              <li>⚡ <strong>Where AI could accelerate delivery:</strong> Automation opportunities, repeated patterns</li>
+            </ul>
+          </div>
+          <div class="mt-4 p-4 bg-gray-50 rounded">
+            <p class="text-sm text-gray-600 mb-2"><strong>Retros become proactive:</strong></p>
+            <p class="text-sm text-gray-700">Instead of "What went wrong last sprint?", AI surfaces issues before they become problems. Teams fix blockers in real time, not retrospectively.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Buildly Labs -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-6 gradient-text">Why Buildly Labs?</h2>
+      <p class="text-gray-700 mb-6 leading-relaxed">
+        RAD Process is designed to be implemented through Buildly Labs. While you can adopt RAD principles manually, Buildly Labs automates the coordination, dependency tracking, and adaptive planning that makes RAD Process work at scale.
+      </p>
+      
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div class="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg border border-blue-200">
+          <h3 class="text-xl font-semibold text-blue-900 mb-3">🤖 AI-Automated Coordination</h3>
+          <p class="text-gray-700">
+            No more standups or manual status updates. AI generates real-time status for everyone.
+          </p>
+        </div>
+        
+        <div class="p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg border border-purple-200">
+          <h3 class="text-xl font-semibold text-purple-900 mb-3">📊 Adaptive Planning</h3>
+          <p class="text-gray-700">
+            Priorities update continuously based on velocity, dependencies, and business needs.
+          </p>
+        </div>
+        
+        <div class="p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-lg border border-green-200">
+          <h3 class="text-xl font-semibold text-green-900 mb-3">🔍 Radical Transparency</h3>
+          <p class="text-gray-700">
+            Everyone sees the same AI-generated truth about what's being built and what's blocking progress.
+          </p>
+        </div>
+        
+        <div class="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg border border-blue-200">
+          <h3 class="text-xl font-semibold text-blue-900 mb-3">👥 Human-in-the-Loop</h3>
+          <p class="text-gray-700">
+            AI handles coordination. Humans make strategic decisions, maintain relationships, and define success.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-lg">
+        <h3 class="text-2xl font-bold mb-4">Ready to Try RAD Process?</h3>
+        <p class="text-blue-100 mb-6">
+          Explore a free Buildly Labs workspace and see RAD Process in action.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="https://labs.buildly.io" target="_blank" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+            Try Buildly Labs Free
+          </a>
+          <a href="https://www.buildly.io/rad-process" target="_blank" class="bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-800 transition">
+            Learn More About RAD Process
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Implementation Tips -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-6 gradient-text">Quick Start: Implement RAD Process This Week</h2>
+      
+      <div class="space-y-4">
+        <div class="flex gap-4 p-5 bg-gray-50 rounded-lg border border-gray-200">
+          <div class="text-2xl">1️⃣</div>
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-2">Monday: Define Outcomes</h4>
+            <p class="text-gray-700">Replace your sprint planning meeting with an outcome definition session. What do you want to achieve this week?</p>
+          </div>
+        </div>
+        
+        <div class="flex gap-4 p-5 bg-gray-50 rounded-lg border border-gray-200">
+          <div class="text-2xl">2️⃣</div>
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-2">Tuesday: Skip the Standup</h4>
+            <p class="text-gray-700">Try one day without a standup. Use Slack or email for async updates. Notice how much uninterrupted focus time you gain.</p>
+          </div>
+        </div>
+        
+        <div class="flex gap-4 p-5 bg-gray-50 rounded-lg border border-gray-200">
+          <div class="text-2xl">3️⃣</div>
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-2">Wednesday: Ship Something</h4>
+            <p class="text-gray-700">Don't wait for sprint end. Ship something small to production. Break the 2-week cadence habit.</p>
+          </div>
+        </div>
+        
+        <div class="flex gap-4 p-5 bg-gray-50 rounded-lg border border-gray-200">
+          <div class="text-2xl">4️⃣</div>
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-2">Thursday: Measure Flow</h4>
+            <p class="text-gray-700">Track how much uninterrupted work time each person had. Compare to last week. This is your flow baseline.</p>
+          </div>
+        </div>
+        
+        <div class="flex gap-4 p-5 bg-gray-50 rounded-lg border border-gray-200">
+          <div class="text-2xl">5️⃣</div>
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-2">Friday: Reflect</h4>
+            <p class="text-gray-700">Did you ship faster? Feel less overhead? More focused work? If yes, you're ready for RAD Process.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Next Steps -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-6 gradient-text">Your Next Step</h2>
+      
+      <div class="space-y-6">
+        <div class="p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-200">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">🤖 Ask the Radical Therapy GPT</h3>
+          <p class="text-gray-700 mb-4">
+            Get personalized advice on transitioning your team from Agile to RAD Process.
+          </p>
+          <a href="gpt-access.html" class="text-blue-600 hover:text-blue-800 font-semibold">Access the GPT Coach →</a>
+        </div>
+
+        <div class="p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-purple-200">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">📖 Read the Full Primer</h3>
+          <p class="text-gray-700 mb-4">
+            Understand the three foundations of Radical Therapy and why AI made Agile obsolete.
+          </p>
+          <a href="primer.html" class="text-purple-600 hover:text-purple-800 font-semibold">Read the Primer →</a>
+        </div>
+
+        <div class="p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-green-200">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">📊 Assess Your Readiness</h3>
+          <p class="text-gray-700 mb-4">
+            Take the 5-minute AI Readiness Self-Assessment to see where you stand.
+          </p>
+          <a href="assessment.html" class="text-green-600 hover:text-green-800 font-semibold">Take the Assessment →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="mt-16 pt-8 border-t border-gray-200">
+      <h2 class="text-2xl font-bold mb-4 text-gray-900">About RAD Process</h2>
+      <p class="text-gray-700 mb-4 leading-relaxed">
+        RAD Process (Rapid Adaptive Development) is the AI-native methodology at the core of Radical Therapy. It's designed for teams using AI tools like Copilot who know their Agile process is now the bottleneck.
+      </p>
+      <p class="text-gray-700 leading-relaxed">
+        Learn more at <a href="https://www.buildly.io/rad-process" target="_blank" class="text-blue-600 hover:underline">buildly.io/rad-process</a>
+      </p>
+      <div class="mt-6">
+        <a href="index.html" class="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition">
+          Back to Home
+        </a>
+        <button onclick="window.print()" class="ml-4 inline-block bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition no-print">
+          Print / Save as PDF
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="gradient-bg text-white py-8 no-print">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <p class="text-blue-100">
+        Part of the Radical Therapy Starter Kit • 
+        <a href="https://www.buildly.io/rad-process" target="_blank" class="text-white hover:underline">Learn About RAD Process</a> • 
+        <a href="https://labs.buildly.io" target="_blank" class="text-white hover:underline">Try Buildly Labs</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
